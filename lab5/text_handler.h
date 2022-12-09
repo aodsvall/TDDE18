@@ -9,17 +9,19 @@
 #include <iterator>
 #include <map>
 #include <ostream>
-
+#include <iomanip>
 
 class text_handler
 {
-    public:
+public:
     text_handler();
     void substitute(std::vector<std::string> &text, std::string &r_value, std::string &n_value);
     void print(std::vector<std::string> &text);
     void erase(std::vector<std::string> &text, std::string &val);
+    void frequency(std::vector<std::string> &text);
+    void table(std::vector<std::string> &text);
 
-    private:
+private:
     std::string name{};
 };
 

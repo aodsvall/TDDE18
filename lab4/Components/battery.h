@@ -4,17 +4,18 @@
 #include <string>
 #include "component.h"
 
+// TODO: Complementary work needed: No need to declare the destructor
+// if it doesn't do anything.
+//DONE
 class Battery : public Component
 {
 public:
-    Battery(std::string name, double const volt, Terminal &input, Terminal &output);
-    ~Battery();
+    Battery(std::string const &name, double const volt, Terminal &input, Terminal &output);
     double get_current() const;
-    void calcCurrent(double const &time) override;
+    void calc_current(double const &time) override;
 
 private:
-    double voltage;
-    
+    double voltage{};  
 };
 
 #endif

@@ -8,7 +8,7 @@ class Terminal
 public:
     Terminal(); 
     ~Terminal();
-    double charge;
+    double charge{};
 };
 
 #endif

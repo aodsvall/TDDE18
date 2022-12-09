@@ -159,7 +159,7 @@ int List::get_index_at(int const &index) const
     Node *tmp;
     tmp = head;
 
-    if(index > size() || index < 0) {
+    if(index > size() || index < 0 || is_empty()) {
         return 0;
     }
     

@@ -24,6 +24,19 @@ using namespace std;
 In addition to looking for one value which works we have decided
 to use boundary value testing.
 */
+
+// TODO: Complementary work needed: Using get_index_at() outside of the list 
+// bounds results in SIGSEGV. 
+//DONE
+
+// TODO: Complementary work needed: Do not print error messages to the console
+//DONE
+
+// TODO: Complementary work needed: Do not print get_value_at() result to the console
+//DONE
+
+
+
 TEST_CASE("Create an empty list")
 {
     List l{};
@@ -48,8 +61,13 @@ TEST_CASE("Insert 1-9 elements")
     REQUIRE(l.size() == 9);
     CHECK_FALSE(l.size() == 8);
     CHECK_FALSE(l.size() == 10);
-
     CHECK_FALSE(l.is_empty());
+}
+
+TEST_CASE("X")
+{
+    List l{};
+    CHECK(l.get_index_at(0) == 0);
 }
 
 TEST_CASE("Check size")
@@ -85,6 +103,7 @@ TEST_CASE("Remove an item")
 
     CHECK(l.get_index_at(2) != 5);
     REQUIRE(l.size() == 5);
+    CHECK(l.get_index_at(-2) == 0);
 }
 TEST_CASE("Possible memory leak") {
     //We tried this with valgrind and there was no leaks.
